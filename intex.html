@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IP Subnet Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>IP Subnet Calculator</h1>
+
+      <form id="calc-form">
+        <div class="row">
+          <label>Address</label>
+          <input id="ip" type="text" placeholder="e.g. 192.168.1.10" required />
+        </div>
+        <div class="row">
+          <label>Prefix (CIDR)</label>
+          <input
+            id="cidr"
+            type="number"
+            min="0"
+            max="32"
+            placeholder="e.g. 24"
+            required
+          />
+        </div>
+        <div class="row actions">
+          <button type="submit">Calculate</button>
+          <button type="button" id="clear">Clear</button>
+        </div>
+      </form>
+
+      <section id="results" class="card hidden">
+        <h2>Results</h2>
+        <div class="grid">
+          <div><strong>Network:</strong> <span id="network"></span></div>
+          <div><strong>Broadcast:</strong> <span id="broadcast"></span></div>
+          <div><strong>First usable:</strong> <span id="first"></span></div>
+          <div><strong>Last usable:</strong> <span id="last"></span></div>
+          <div><strong>Total hosts:</strong> <span id="hosts"></span></div>
+          <div><strong>Usable hosts:</strong> <span id="usable"></span></div>
+          <div><strong>Subnet mask:</strong> <span id="mask"></span></div>
+          <div><strong>Wildcard mask:</strong> <span id="wildcard"></span></div>
+          <div><strong>Class:</strong> <span id="ipclass"></span></div>
+          <div><strong>Type:</strong> <span id="iptype"></span></div>
+        </div>
+        <details>
+          <summary>Binary view</summary>
+          <pre id="binary"></pre>
+        </details>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
